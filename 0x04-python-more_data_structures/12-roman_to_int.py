@@ -22,7 +22,8 @@ def translate_letter(roman_string):
 def roman_to_int(roman_string):
     number = 0
     boo = 0
-    j = 0
+    if not isinstance(roman_string, str):
+        return None
     roman_string = translate_letter(roman_string)
     for i, d in enumerate(roman_string):
         if boo == 1:
