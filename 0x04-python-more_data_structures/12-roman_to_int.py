@@ -20,17 +20,16 @@ def translate_letter(roman_string):
 
 
 def roman_to_int(roman_string):
-    if type(roman_string) is str:
-        number = 0
-        roman_string = translate_letter(roman_string)
-        for i, d in enumerate(roman_string):
+    number = 0
+    roman_string = translate_letter(roman_string)
+    for i, d in enumerate(roman_string):
+        i = i + 1
+        j = d
+        i = i - 1
+        if d < j:
+            number = number + (j - d)
             i = i + 1
-            j = d
-            i = i - 1
-            if d < j:
-                number = number + (j - d)
-                i = i + 1
-            else:
-                number = number + d
+        else:
+            number = number + d
 
-                return number
+    return number
