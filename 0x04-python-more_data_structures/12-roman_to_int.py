@@ -21,15 +21,21 @@ def translate_letter(roman_string):
 
 def roman_to_int(roman_string):
     number = 0
+    boo = 0
+    j = 0
     roman_string = translate_letter(roman_string)
     for i, d in enumerate(roman_string):
-        i = i + 1
-        j = d
-        i = i - 1
-        if d < j:
-            number = number + (j - d)
-            i = i + 1
+        if boo == 1:
+            boo = 0
         else:
-            number = number + d
+            if i != len(roman_string) - 1:
+                j = roman_string[i + 1]
+            else:
+                j = 0
+            if d < j:
+                number = number + (j - d)
+                boo = 1
+            else:
+                number = number + d
 
     return number
