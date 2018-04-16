@@ -17,5 +17,6 @@ def list_division(my_list_1, my_list_2, list_length):
         except IndexError:
             divi = 0
             print("out fo range")
-        new_list.append(divi)
+        finally:
+            new_list.append(divi)
     return new_list
