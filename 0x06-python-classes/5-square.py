@@ -11,10 +11,13 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        for column in range(self.__size):
-            for row in range(self.__size):
-                print("#", end='')
+        if self.__size == 0:
             print()
+        else:
+            for column in range(self.__size):
+                for row in range(self.__size):
+                    print("#", end='')
+                print()
 
     @property
     def size(self):
