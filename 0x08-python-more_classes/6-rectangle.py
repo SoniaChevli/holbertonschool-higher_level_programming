@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 
 
-
 class Rectangle:
 
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -52,8 +51,9 @@ class Rectangle:
         return hashtangle
 
     def __repr__(self):
-        return "Rectangle(" + str(self.__height) + ", " + str(self.__width) + ")"
+        return "Rectangle(" + str(self.__height) + ", " + str(self.__width) +\
+            ")"
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
-        print("Bye rectangle…")
+        print("Bye rectangle...")
