@@ -4,8 +4,8 @@
 class Rectangle:
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -48,7 +48,8 @@ class Rectangle:
         return hashtangle
 
     def __repr__(self):
-        return "Rectangle(" + str(self.__height) + ", " + str(self.__width) + ")"
+        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + \
+            ")"
 
     def __del__(self):
-        print("Bye rectangle…")
+        print("Bye rectangle...")
