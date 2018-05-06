@@ -15,6 +15,10 @@ class TestMaxInteger(unittest.TestCase):
         """is 10 the max integer?"""
         self.assertEqual(max_integer([1, 2, 3, 10]), 10)
 
+    def test_max_in_middle(self):
+        """max is placed in middle"""
+        self.assertEqual(max_integer([10, 15, 9, 8]), 15)
+
     def test_len_0(self):
         """is the length of matrix 0"""
         self.assertEqual(max_integer([]), None)
