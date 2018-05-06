@@ -41,12 +41,12 @@ class Rectangle:
         hashtangle = ''
         if self.__height == 0 or self.__width == 0:
             return hashtangle
-        for i in range(self.__width):
-            hashtangle += "#" * self.__height
-            if i != self.__width - 1:
+        for i in range(self.__height):
+            hashtangle += "#" * self.__width
+            if i != self.__height - 1:
                 hashtangle += '\n'
         return hashtangle
 
     def __repr__(self):
-        return "Rectangle(" + str(self.__height) + ", " + \
-            str(self.__width) + ")"
+        return "Rectangle(" + str(self.__width) + ", " + \
+            str(self.__height) + ")"
