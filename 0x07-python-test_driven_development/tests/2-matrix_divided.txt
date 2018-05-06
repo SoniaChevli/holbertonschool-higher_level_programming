@@ -1,0 +1,30 @@
+>>> matrix_divided =  __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>> matrix_divided =  __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1],[2]], 0)
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    matrix_divided([[1],[2]], 0)
+  File "<pyshell#0>", line 9, in matrix_divided
+    raise ZeroDivisionError('division by zero')
+ZeroDivisionError: division by zero
+
+
+>>> matrix_divided([[1],[2, 2]], 3)
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    matrix_divided([[1],[2, 2]], 3)
+  File "<pyshell#0>", line 14, in matrix_divided
+    raise TypeError('Each row of the matrix must have the same size')
+TypeError: Each row of the matrix must have the same size
+
+
+>>> matrix_divided([], 3)
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    matrix_divided([], 3)
+  File "<pyshell#14>", line 4, in matrix_divided
+    raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
+TypeError: matrix must be a matrix (list of lists) of integers/floats
