@@ -25,7 +25,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_not_matrix(self):
         """no matrix given"""
-        self.assertEqual(max_integer(3), 3)
+        self.assertEqual(max_integer([3]), 3)
 
     def test_double_matrix(self):
         """ given double matrix"""
