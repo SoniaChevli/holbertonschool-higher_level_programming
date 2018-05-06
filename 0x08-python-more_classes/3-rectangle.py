@@ -39,6 +39,8 @@ class Rectangle:
 
     def __str__(self):
         hashtangle = ''
+        if self.__height == 0 or self.__width == 0:
+            return hashtangle
         for i in range(self.__height):
             hashtangle += '#' * self.__width
             if i != self.__height - 1:
