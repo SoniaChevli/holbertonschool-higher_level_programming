@@ -1,0 +1,15 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Sonia", "Chevli")
+My name is Sonia Chevli
+
+>>> say_my_name("Sonia", )
+My name is Sonia 
+
+>>> say_my_name("Sonia", 3)
+Traceback (most recent call last):
+  File "<pyshell#26>", line 1, in <module>
+    say_my_name("Sonia", 3)
+  File "<pyshell#22>", line 5, in say_my_name
+    raise TypeError('last_name must be a string')
+TypeError: last_name must be a string
+
