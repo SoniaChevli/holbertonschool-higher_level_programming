@@ -1,0 +1,48 @@
+>>> print_square = __import__('4-print_square').print_square
+>>> print_square(1)
+#
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square(-1)
+Traceback (most recent call last):
+  File "<pyshell#33>", line 1, in <module>
+    print_square(-1)
+  File "<pyshell#30>", line 5, in print_square
+    raise ValueError("size must be >= 0")
+ValueError: size must be >= 0
+
+>>> print_square("sonia")
+Traceback (most recent call last):
+  File "<pyshell#35>", line 1, in <module>
+    print_square("sonia")
+  File "<pyshell#30>", line 3, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+>>> print_square(0)
+
+
+>>> print_square(2.3)
+Traceback (most recent call last):
+  File "<pyshell#37>", line 1, in <module>
+    print_square(2.3)
+  File "<pyshell#30>", line 3, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+>>> print_square()
+Traceback (most recent call last):
+  File "<pyshell#38>", line 1, in <module>
+    print_square()
+TypeError: print_square() missing 1 required positional argument: 'size'
