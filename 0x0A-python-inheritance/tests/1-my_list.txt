@@ -23,4 +23,6 @@
 [-90, -25, -1, 9]
 >>> print(next_list)
 [-1, -90, 9, -25]
->>> 
+>>> empty_list = MyList()
+>>> print(empty_list)
+[]
