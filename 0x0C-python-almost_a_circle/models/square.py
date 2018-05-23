@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-''' 
-module for square 
+'''
+module for square
 '''
 from models.rectangle import Rectangle
 
