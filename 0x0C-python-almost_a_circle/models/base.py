@@ -2,6 +2,7 @@
 import json
 import ast
 
+
 class Base:
     """ Base """
     __nb_objects = 0
@@ -25,7 +26,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ 
+        """
         returns the JSON string rep of list__dictionaries
         """
         return json.dumps(list_dictionaries)
@@ -48,7 +49,7 @@ class Base:
         Args:
         json_string(str): string rep of list of dictionaries
         """
-        if json_string == None or json_string == '':
+        if json_string is None or json_string == '':
             return []
         else:
             return json.loads(json_string)
@@ -65,7 +66,6 @@ class Base:
         an instance with all attributes set
 
         """
-        
         from models.rectangle import Rectangle
         from models.square import Square
 
@@ -96,5 +96,3 @@ class Base:
                 k = cls.create(**i)
                 new.append(k)
             return new
-
-
