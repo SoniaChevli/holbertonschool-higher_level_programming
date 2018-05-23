@@ -111,10 +111,12 @@ class TestRectangle(unittest.TestCase):
     def test_to_dictionary(self):
         r = Rectangle(1, 2, 3, 4, 5)
         a = {'width': 1, 'height': 2, 'x': 3, 'y': 4, 'id': 5}
-        self.assertTrue(r.to_dictionary() == a)
+        a2 = r.to_dictionary()
+        self.assertEqual(a2, a)
         r2 = Rectangle(1, 2)
         b = {'width': 1, 'height': 2, 'x': 0, 'y': 0, 'id': 6}
-        self.assertEqual(r2.to_dictionary, b)
+        b2 = r2.to_dictionary()
+        self.assertEqual(b2, b)
 
 if __name__ == '__main__':
     unittest.main()
