@@ -32,6 +32,8 @@ class Base:
         """
         returns the JSON string rep of list__dictionaries
         """
+        if list_dictionaries is None:
+            return []
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -43,7 +45,7 @@ class Base:
             l = []
             for i in list_objs:
                 l.append(i.to_dictionary())
-            outputfile.write(Base.to_json_string(l))
+            outputfile.write(cls.to_json_string(l))
 
     @staticmethod
     def from_json_string(json_string):
