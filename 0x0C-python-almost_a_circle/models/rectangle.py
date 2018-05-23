@@ -12,8 +12,8 @@ class Rectangle(Base):
         Args:
         width (int): width of rectangle
         height (int): height of rectangle
-        x (int): 
-        y (int): 
+        x (int):
+        y (int):
         id (int): id of rectangle
 
         Return:
@@ -24,7 +24,6 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-
 
     @property
     def width(self):
@@ -45,7 +44,6 @@ class Rectangle(Base):
             raise ValueError('width must be > 0')
         self.__width = value
 
-
     @property
     def height(self):
         """ height getter"""
@@ -65,7 +63,6 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError('height must be > 0')
         self.__height = value
-
 
     @property
     def x(self):
@@ -109,7 +106,6 @@ class Rectangle(Base):
     def area(self):
         """ area of rectangle"""
         return self.__height * self.__width
-        
 
     def display(self):
         """ prints rectangle """
@@ -125,7 +121,9 @@ class Rectangle(Base):
     def __str__(self):
         """overloads the str method"""
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id,
-                                                       self.__x, self.__y, self.__width, self.__height)
+                                                       self.__x, self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """ assigns an argument to each attribute"""
@@ -145,7 +143,6 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-
 
     def to_dictionary(self):
         """ gives the dictionary representation of Rectangle"""
