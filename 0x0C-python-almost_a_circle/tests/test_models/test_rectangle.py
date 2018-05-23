@@ -67,7 +67,7 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(10, 5)
         self.assertEqual(r.area(), r.width * r.height)
         """
-        def test_display(self):
+    def test_display(self):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
@@ -88,7 +88,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.height, 10)
         self.assertEqual(r.x, 10)
         self.assertEqual(r.y, 10)
+        self.assertEqual(r.id, 10)
 
+        
     def test_update_kwargs(self):
         """ check how kwargs affects update"""
         r = Rectangle(1, 2, 3, 4)
@@ -105,3 +107,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 10)
         self.assertEqual(r.width, 10)
         self.assertEqual(r.height, 10)
+
+    def test_to_dictionary(self):
+        r = Rectangle(1, 2, 3, 4, 5)
+        a = {'width': 1, 'height': 2, 'x': 3, 'y': 4, 'id': 5}
+        self.assertTrue(r.to_dictionary() == a)
+        r2 = Rectangle(1, 2)
+        b = {'width': 1, 'height': 2, 'x': 0, 'y': 0, 'id': 6}
+        self.assertEqual(r2.to_dictionary, b)
+
+if __name__ == '__main__':
+    unittest.main()
