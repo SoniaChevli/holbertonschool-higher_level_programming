@@ -97,13 +97,18 @@ class Base:
         Return:
         a list of instances. Otherwise an empty list
         """
-        with open('{}.json'.format(cls.__name__), 'r') as f:
-            new = []
-            fr = f.read()
-            j = cls.from_json_string(fr)
-            if j is None or len(j) == 0:
+        from pathlib import Path
+
+        if os.path.isfile(fname):
+            with open('{}.json'.format(cls.__name__), 'r') as f:
+                new = []
+                fr = f.read()
+                j = cls.from_json_string(fr)
+                if j is None or len(j) == 0:
+                    return new
+                for i in j:
+                    k = cls.create(**i)
+                    new.append(k)
                 return new
-            for i in j:
-                k = cls.create(**i)
-                new.append(k)
-            return new
+        else:
+            return []
