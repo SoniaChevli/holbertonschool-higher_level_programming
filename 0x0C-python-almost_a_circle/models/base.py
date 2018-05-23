@@ -41,11 +41,15 @@ class Base:
         """
         writes JSON string rep of list_objs
         """
-        with open('{}.json'.format(cls.__name__), 'w') as outputfile:
+        with open('{}.json'.format(cls.__name__), 'w', encoding='utf-8') as outputfile:
             l = []
-            for i in list_objs:
-                l.append(i.to_dictionary())
-            outputfile.write(cls.to_json_string(l))
+            if list_objs is None or len(list_objs) == 0:
+                l = []
+            else:
+                for i in list_objs:
+                    l.append(i.to_dictionary())
+            j = cls.to_json_string(l)
+            outputfile.write(j)
 
     @staticmethod
     def from_json_string(json_string):
