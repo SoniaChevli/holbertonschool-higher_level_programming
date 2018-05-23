@@ -4,7 +4,7 @@ Module for class Base
 '''
 import json
 import ast
-
+from pathlib import Path
 
 class Base:
     """ Base """
@@ -97,10 +97,9 @@ class Base:
         Return:
         a list of instances. Otherwise an empty list
         """
-        from pathlib import Path
-
+        fname = '{}.json'.format(cls.__name__)
         if os.path.isfile(fname):
-            with open('{}.json'.format(cls.__name__), 'r') as f:
+            with open(fname, 'r') as f:
                 new = []
                 fr = f.read()
                 j = cls.from_json_string(fr)
