@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''
+Module for class Base
+'''
 import json
 import ast
 
