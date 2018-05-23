@@ -4,7 +4,8 @@ Module for class Base
 '''
 import json
 import ast
-from pathlib import Path
+import os.path
+
 
 class Base:
     """ Base """
