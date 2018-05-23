@@ -41,7 +41,7 @@ class Base:
         """
         writes JSON string rep of list_objs
         """
-        with open('{}.json'.format(cls.__name__), 'w', encoding='utf-8') as outputfile:
+        with open('{}.json'.format(cls.__name__), 'w', encoding='utf-8') as f:
             l = []
             if list_objs is None or len(list_objs) == 0:
                 l = []
@@ -49,7 +49,7 @@ class Base:
                 for i in list_objs:
                     l.append(i.to_dictionary())
             j = cls.to_json_string(l)
-            outputfile.write(j)
+            f.write(j)
 
     @staticmethod
     def from_json_string(json_string):
