@@ -101,6 +101,8 @@ class Base:
             new = []
             fr = f.read()
             j = cls.from_json_string(fr)
+            if j is None or len(j) == 0:
+                return new
             for i in j:
                 k = cls.create(**i)
                 new.append(k)
