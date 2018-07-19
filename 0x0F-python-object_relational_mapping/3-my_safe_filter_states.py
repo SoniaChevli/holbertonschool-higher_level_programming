@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     cur = connection.cursor()
     cmd = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"\
-          .format(sys.argv[4]))
+          .format(sys.argv[4])
     cur.execute(cmd)
     states = cur.fetchall()
 
