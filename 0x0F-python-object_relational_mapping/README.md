@@ -1,6 +1,5 @@
 # 0x0F. Python - Object-relational mapping
 
-
 ### What I should learn from this project:
 * How to connect to a MySQL database from a Python script
 * How to SELECT rows in a MySQL table from a python script
