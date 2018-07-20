@@ -13,9 +13,9 @@ if __name__ == '__main__':
                                  db=sys.argv[3])
 
     cur = connection.cursor()
-    cmd = "SELECT cities.name FROM states \
-    JOIN cities ON states.id = cities.state_id \
-    WHERE states.name = '{}'".format(sys.argv[4])
+    cmd = "SELECT cities.name FROM cities \
+    JOIN states ON states.id = cities.state_id \
+    WHERE states.name =%s".format((sys.argv[4],))
     citynum = cur.execute(cmd)
     cities = cur.fetchall()
     for i in range(citynum):
