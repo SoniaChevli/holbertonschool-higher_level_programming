@@ -13,13 +13,13 @@ if __name__ == '__main__':
                                  db=sys.argv[3])
 
     cur = connection.cursor()
-    cmd = "SELECT cities.id, cities.name, states.name \
-    FROM cities JOIN states ON states.id = cities.id"
-    cur.execute(cmd)
-    cities = cur.fetchall()
 
-    for city in cities:
-        print (city)
+    cur.execute("SELECT cities.id, cities.name, states.name \
+    FROM cities INNER JOIN states ON states.id = cities.id")
+    rows = cur.fetchall()
+
+    for row in rows:
+        print(row)
 
     connection.close()
     sys.exit()
