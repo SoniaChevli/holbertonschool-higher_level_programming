@@ -3,9 +3,11 @@
 lists all states from hbtn_0e_0_usa
 where name matches argument
 """
+
+import MySQLdb
+import sys
+
 if __name__ == '__main__':
-    import MySQLdb
-    import sys
 
     connection = MySQLdb.connect(host="localhost",
                                  port=3306,
