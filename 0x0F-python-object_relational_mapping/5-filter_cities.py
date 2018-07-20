@@ -13,9 +13,9 @@ if __name__ == '__main__':
                                  db=sys.argv[3])
 
     cur = connection.cursor()
-    citynum = cur.execute( "SELECT cities.name FROM cities \
+    citynum = cur.execute("SELECT cities.name FROM cities \
     JOIN states ON states.id = cities.state_id \
-    WHERE states.name =%s", (sys.argv[4],))
+    WHERE states.name=%s ORDER BY cities.id ASC", (sys.argv[4],))
 
     cities = cur.fetchall()
     for i in range(citynum):
@@ -25,5 +25,5 @@ if __name__ == '__main__':
             print(cities[i][0], end=", ")
 
     cur.close()
-    connection.close
+    connection.close()
     sys.exit()
