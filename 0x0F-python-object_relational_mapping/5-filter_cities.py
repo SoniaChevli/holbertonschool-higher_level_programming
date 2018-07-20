@@ -13,10 +13,10 @@ if __name__ == '__main__':
                                  db=sys.argv[3])
 
     cur = connection.cursor()
-    cmd = "SELECT cities.name FROM cities \
+    citynum = cur.execute( "SELECT cities.name FROM cities \
     JOIN states ON states.id = cities.state_id \
-    WHERE states.name =%s".format((sys.argv[4],))
-    citynum = cur.execute(cmd)
+    WHERE states.name =%s", (sys.argv[4],))
+
     cities = cur.fetchall()
     for i in range(citynum):
         if i == citynum - 1:
