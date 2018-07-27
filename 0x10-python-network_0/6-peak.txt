@@ -1,0 +1,2 @@
+# time complexity for find a peak algo
+O(n)
