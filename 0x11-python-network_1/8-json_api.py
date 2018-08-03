@@ -22,4 +22,4 @@ if __name__ == '__main__':
             print('[{}] {}'.format(x['id'], x['name']))
 
     except:
-        print('Not a valid JSON type is {}'.format(type(r)))
+        print('Not a valid JSON')
