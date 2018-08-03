@@ -7,15 +7,19 @@ import requests
 import sys
 
 if __name__ == '__main__':
-
-    d = {'q': sys.argv[1]}
+    try:
+        d = {'q': sys.argv[1]}
+    except:
+        d = {'q': ''}
 
     r = requests.post('http://0.0.0.0:5000/search_user', data=d)
 
-    if type(r.text) is not str:
-        print('Not a valid JSON type is {}'.format(type(r)))
-    elif len(r.text) == 0:
-        print('No result')
-    else:
+    try:
         x = r.json()
-        print('[{}] {}'.format(x['id'], x['name']))
+        if len(x) == 0:
+            print('No result')
+        else:
+            print('[{}] {}'.format(x['id'], x['name']))
+
+    except:
+        print('Not a valid JSON type is {}'.format(type(r)))
