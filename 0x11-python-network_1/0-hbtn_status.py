@@ -5,12 +5,10 @@ fetches a url
 import urllib.request
 
 with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-    utf8_content = response.read().decode('utf-8')
-    str1 = ''
-    for line in response:
-        str1 += line
+    tmp = response.read()
+    utf8_content = tmp.decode('utf-8')
 
     print('Body response:')
-    print('\t- type: <class \'bytes\'>')
-    print('\t- content: %s'.format(str1))
-    print('\t- utf8 content: %s'.format(utf8_content))
+    print('\t- type: {}'.format(type(tmp)))
+    print('\t- content: {}'.format(tmp))
+    print('\t- utf8 content: {}'.format(utf8_content))
