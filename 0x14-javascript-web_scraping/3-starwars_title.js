@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const episodeNUM = process.argv[2];
-var request = require('request');
+let request = require('request');
 console.log('EPI', episodeNUM);
 request(`https://swapi.co/api/films/${episodeNUM}`, function (
   error,
